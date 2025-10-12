@@ -1,0 +1,7 @@
+<mesh>
+	<type structure="unstructured"/>
+	<unstructuredMesh>
+		<file name="./libMeshes/unstructured2D/injectionSquare.msh"/>
+	    <parallel GMSHPretraitement="true"/>
+	</unstructuredMesh>
+</mesh>

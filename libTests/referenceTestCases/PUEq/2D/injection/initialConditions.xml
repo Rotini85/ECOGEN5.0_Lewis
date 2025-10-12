@@ -1,0 +1,34 @@
+<CI>
+	<!-- LIST OF GEOMETRICAL DOMAINS  -->
+	<physicalDomains>
+		<domain name="Domain" state="init" type="entireDomain" physicalEntity="10"/>
+	</physicalDomains>
+
+	<!-- LIST OF BOUNDARY CONDITIONS -->
+	<boundaryConditions>
+		<boundCond name="Wall" type="wall" number="1"/>
+		<boundCond name="Inlet" type="inletInjStagState" number="2">
+			<dataInletInj m0="10000">
+				<transport name="color" value="1.0"/>
+			</dataInletInj>
+			<dataFluid EOS="SG_dodLiq.xml" density="750" pressure="1.e5" alpha="0.99999"/>
+			<dataFluid EOS="IG_air.xml" density="1.22" pressure="1.e5" alpha="0.00001" />
+		</boundCond>
+	</boundaryConditions>
+
+	<!--  LIST OF STATES  -->
+	<state name="init">
+		<material type="fluid" EOS="SG_dodLiq.xml">
+            <dataFluid density="750" alpha="0.00001"/>
+        </material>
+		<material type="fluid" EOS="IG_air.xml">
+			<dataFluid density="1.22" alpha="0.99999"/>
+		</material>
+		<mixture>
+			<dataMix pressure="1.e5"/>
+			<velocity x="0.0" y="0.0" z="0.0"/>
+		</mixture>
+		<transport name="color" value="1.e-6"/>
+	</state>
+
+</CI>

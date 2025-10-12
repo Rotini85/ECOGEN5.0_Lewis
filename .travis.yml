@@ -1,0 +1,37 @@
+dist: xenial
+
+sudo: false
+
+# safelist (buil & deploy only for tagged version)
+branches:
+  only:
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+
+language: python
+
+install:
+  - pip install sphinx sphinx_rtd_theme sphinx-numfig sphinxcontrib-bibtex
+
+env:
+  global:
+    - ECOGEN_ENV=production
+    - GIT_DEPLOY_REPO=https://$GITHUB_TOKEN@github.com/code-mphi/ECOGEN.git
+    - TARGET_BRANCH="gh-pages"
+
+addons:
+   apt: 
+      packages:
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
+      - texlive
+      - texlive-latex-extra
+      - latexmk
+
+script: bash ./scripts/travis/buildAndDeploy.sh
+
+notifications:
+  email: "ecogen@code-mphi.fr"
+

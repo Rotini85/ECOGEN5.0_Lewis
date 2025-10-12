@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
+<CI>
+    <!-- LIST OF GEOMETRICAL DOMAINS  -->
+    <physicalDomains>
+        <domain name="base" state="leftChamber" type="EntireDomainWithParticularities"/>
+    </physicalDomains>
+
+    <!-- LIST OF BOUNDARY CONDITIONS -->
+    <boundaryConditions>
+        <boundCond name="BC_Xmin" type="symmetry" number="1" />
+        <boundCond name="BC_Xmax" type="nonReflecting" number="2" />
+        <boundCond name="BC_Ymin" type="nonReflecting" number="3" />
+        <boundCond name="BC_Ymax" type="nonReflecting" number="4" />
+    </boundaryConditions>
+
+    <!--  LIST OF STATES  -->
+    <state name="leftChamber">
+        <material type="fluid" EOS="IG_air.xml">
+            <dataFluid density="1.0" pressure="101325">
+                <velocity x="0." y="0." z="0."/>
+            </dataFluid>
+        </material>
+        <transport name="transport" value="1."/>
+    </state>
+
+</CI>

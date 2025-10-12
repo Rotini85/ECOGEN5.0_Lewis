@@ -1,0 +1,9 @@
+<computationParam>
+  <run>pressureVelocityEq2DInjection</run>
+  <outputMode format="VTK" binary="false"/>
+  <timeControlMode iterations="false">
+    <iterations number="100" iterFreq="2"/>
+    <physicalTime totalTime="1e-1." timeFreq="5e-4"/>
+  </timeControlMode>
+  <computationControl CFL="0.8"/>
+</computationParam>

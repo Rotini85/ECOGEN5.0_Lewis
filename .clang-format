@@ -1,0 +1,93 @@
+Language: Cpp
+BasedOnStyle: LLVM
+
+# To find default options: clang-format --dump-config -style llvm
+
+BreakBeforeBraces: Custom #Stroustrup
+
+ColumnLimit: 150
+
+AccessModifierOffset: 2 # Access modifiers (public, protected and private keywords) indentation
+IndentAccessModifiers: true # Give the access modifiers their own level of indentation
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  AlignFunctionPointers: false
+  PadOperators: true
+
+AlignEscapedNewlines: LeftWithLastLine
+AlignOperands: AlignAfterOperator
+
+AlignTrailingComments:
+#  Kind: Leave # Bug: https://github.com/llvm/llvm-project/issues/75035
+   Kind: Always
+   OverEmptyLines: 0
+
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortBlocksOnASingleLine: false
+AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+
+BinPackArguments: false # If all args of a function doesn't fit on one line, put one arg per line
+BinPackParameters: false # If all params doesn't fit on one line, put one per line
+
+
+BraceWrapping:
+  AfterClass: true
+  AfterEnum: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterFunction: true
+  AfterExternBlock: true
+  BeforeElse: true
+  BeforeCatch: true
+  SplitEmptyFunction: false
+  SplitEmptyNamespace: false
+
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterComma
+
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
+
+Cpp11BracedListStyle: true
+
+IndentPPDirectives: BeforeHash
+PackConstructorInitializers: NextLine
+
+PenaltyBreakAssignment:  100 # Default 2
+PenaltyBreakBeforeFirstCallParameter: 100 # Default 19
+PenaltyBreakComment: 10000 # Default 300
+# PenaltyBreakFirstLessLess: 120 # Default 120
+# PenaltyBreakOpenParenthesis: 0 # Default 0
+# PenaltyBreakScopeResolution: 500 # default 500
+# PenaltyBreakString: 1000 # default 1000
+# PenaltyBreakTemplateDeclaration: 10 # default 10
+PenaltyExcessCharacter: 49 # default 1000000
+# PenaltyIndentedWhitespace: 0 # default 0
+# PenaltyReturnTypeOnItsOwnLine: 60 # default 10
+
+# Remark: penalty to break before +, -, *, ... operators seems to be 50 (heuristic eval)
+# 1 -> 50
+# 2 -> 17
+# 3 -> 9
+# 4 -> 6
+# 5 -> 5
+# PenaltyBreakAssignment: if <14, break on '=', if >=14, break on '*'
+
+PointerAlignment: Left
+
+ReflowComments: false
+
+SpacesInLineCommentPrefix:
+  Minimum: 0
+
+SortIncludes: false

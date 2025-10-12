@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
+<model>
+	<flowModel name="Euler"/>
+	<EOS name="IG_air.xml"/>
+	<sourceTerms type="acousticWave" order="EULER">
+		<typeAcousticWave type="planeGaussianPulse">
+			<dataPlaneGaussianPulse pressureAmplitude="10." delayedTime="20.e-6" pulseWidth="5.e-6">
+				<sourceLocation x="10.03e-3" y="0." z="0."/> <!-- Must be placed at: cell_center + 1/4 * cell_size_in_wanted_direction -->
+				<pulseDirection x="1." y="0." z="0."/>
+			</dataPlaneGaussianPulse>
+		</typeAcousticWave>
+	</sourceTerms>
+</model>
