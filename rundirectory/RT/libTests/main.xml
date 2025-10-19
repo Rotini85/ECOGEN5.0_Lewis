@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
 <computationParam>
-	<run>10_12_25_RT_OG</run>
+	<run>10_16_25_RT_viscosity_05</run>
 	<outputMode format="VTK" binary="false" precision="16"/>
 	<timeControlMode iterations="false">
 		<iterations number="20" iterFreq="1"/>

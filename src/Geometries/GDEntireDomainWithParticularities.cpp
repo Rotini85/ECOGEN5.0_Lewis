@@ -304,7 +304,7 @@ void GDEntireDomainWithParticularities::fillIn(Cell* cell) const
     double k = 2 * pi / lambda;      // Wave-number
     int nx = 1000;                   // Nb of points to plot interface function
     double dx = lambda / (nx - 1.);  // Points spacing for the plot of the interface fn
-    double amp = 0.05 / k;           // Amplitude of the sinus function
+    double amp = 0.5 / k;           // Amplitude of the sinus function
 
     double rhoHeavy = cell->getPhase(0)->getDensity(),
       rhoLight = cell->getPhase(1)->getDensity();
