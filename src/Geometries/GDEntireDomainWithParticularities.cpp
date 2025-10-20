@@ -298,8 +298,8 @@ void GDEntireDomainWithParticularities::fillIn(Cell* cell) const
     // double h = 0.7;                  // Height of the interface
 
     // * R-T same dynamic viscosity
-    double lambda = 2.5;             // Width of the domain
-    double h = 12.5;                 // Height of the interface
+    double lambda = 100e-6;             // Width of the domain
+    double h = 500e-6;                 // Height of the interface
 
     double k = 2 * pi / lambda;      // Wave-number
     int nx = 1000;                   // Nb of points to plot interface function
@@ -317,7 +317,7 @@ void GDEntireDomainWithParticularities::fillIn(Cell* cell) const
     // double g = 9.81, ly = 1.2;
 
     // * R-T same dynamic viscosity
-    double g = 1., ly = 25.;
+    double g = 1e11, ly = 1000e-6;
 
     std::vector<double> interfaceX, interfaceY; // Interface fn coordinates
     for (int i = 0; i < nx; i++) {
